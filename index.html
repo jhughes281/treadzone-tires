@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TreadZone Tire & Wheel — Tires, Wheels & Installation | Houston, TX</title>
+<meta name="description" content="Shop tires by size, vehicle, or brand. Professional installation, free rotations for life, and price-match guarantee at TreadZone Tire & Wheel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2317191D'/><circle cx='50' cy='50' r='40' fill='none' stroke='%23E11D2E' stroke-width='7' stroke-dasharray='9 7'/><circle cx='50' cy='50' r='16' fill='%23E11D2E'/></svg>">
+<style>
+  :root {
+    --red: #E11D2E;
+    --red-dark: #B8121F;
+    --dark: #17191D;
+    --steel: #23262C;
+    --line: #E3E6EA;
+    --text: #1C1E22;
+    --muted: #5C636E;
+    --bg: #F5F6F8;
+    --white: #fff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+  h1, h2, h3, .btn, .tab, .finder label { font-family: 'Barlow Condensed', sans-serif; }
+  h1, h2 { text-transform: uppercase; letter-spacing: .5px; }
+  .wrap { width: min(1180px, 93%); margin: 0 auto; }
+  img, svg { max-width: 100%; }
+
+  /* ---------- UTILITY BAR ---------- */
+  .util { background: var(--dark); color: #C9CDD4; font-size: .82rem; }
+  .util-inner { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; flex-wrap: wrap; }
+  .util a { color: #fff; text-decoration: none; font-weight: 600; }
+  .util .dot { color: var(--red); margin: 0 .5rem; }
+
+  /* ---------- NAV ---------- */
+  nav { background: var(--white); border-bottom: 3px solid var(--red); position: sticky; top: 0; z-index: 60; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: .8rem 0; gap: 1rem; }
+  .brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; color: var(--text); }
+  .brand svg { width: 42px; height: 42px; }
+  .brand b { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; text-transform: uppercase; line-height: 1; }
+  .brand b span { color: var(--red); }
+  .brand small { display: block; font-size: .62rem; letter-spacing: 2.5px; color: var(--muted); text-transform: uppercase; font-family: 'Inter', sans-serif; }
+  .nav-links { display: flex; gap: 1.6rem; list-style: none; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: .92rem; }
+  .nav-links a:hover { color: var(--red); }
+  .btn {
+    display: inline-block; text-decoration: none; text-transform: uppercase; letter-spacing: .8px;
+    font-weight: 700; font-size: 1.02rem; padding: .7rem 1.6rem; border-radius: 6px;
+    border: 0; cursor: pointer; transition: background .15s ease, transform .15s ease;
+  }
+  .btn.red { background: var(--red); color: #fff; }
+  .btn.red:hover { background: var(--red-dark); transform: translateY(-1px); }
+  .btn.outline { border: 2px solid var(--dark); color: var(--dark); background: transparent; }
+  .btn.outline:hover { border-color: var(--red); color: var(--red); }
+
+  /* ---------- HERO + FINDER ---------- */
+  .hero {
+    background:
+      radial-gradient(ellipse at 75% 20%, rgba(225, 29, 46, .18), transparent 55%),
+      linear-gradient(160deg, #1B1E24 0%, #14161A 60%, #0F1114 100%);
+    color: #fff; padding: 3.8rem 0 4.2rem; position: relative; overflow: hidden;
+  }
+  .hero::before { /* giant tread-mark circle */
+    content: ''; position: absolute; right: -180px; top: 50%; transform: translateY(-50%);
+    width: 560px; height: 560px; border-radius: 50%;
+    border: 60px solid transparent;
+    background:
+      repeating-conic-gradient(#2A2E36 0deg 7deg, transparent 7deg 14deg) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    opacity: .55; pointer-events: none;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 3rem; align-items: center; position: relative; }
+  .hero .kicker { color: var(--red); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; font-size: .85rem; }
+  .hero h1 { font-size: clamp(2.5rem, 5.5vw, 4.2rem); font-weight: 800; line-height: .98; margin: .7rem 0 1rem; }
+  .hero h1 em { font-style: normal; color: var(--red); }
+  .hero p { color: #A7ADB8; max-width: 46ch; }
+  .hero-perks { display: flex; gap: 1.6rem; margin-top: 1.6rem; flex-wrap: wrap; font-size: .88rem; color: #C9CDD4; }
+  .hero-perks span::before { content: '✓ '; color: var(--red); font-weight: 700; }
+
+  /* finder card */
+  .finder {
+    background: #fff; color: var(--text); border-radius: 12px; overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,.45);
+  }
+  .tabs { display: flex; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .tab {
+    flex: 1; padding: .95rem .5rem; text-align: center; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .8px; font-size: 1rem; color: var(--muted); cursor: pointer; border: 0; background: transparent;
+    border-bottom: 3px solid transparent;
+  }
+  .tab.active { color: var(--red); border-bottom-color: var(--red); background: #fff; }
+  .panel { display: none; padding: 1.5rem 1.5rem 1.7rem; }
+  .panel.active { display: block; }
+  .panel h3 { font-size: 1.25rem; text-transform: uppercase; margin-bottom: 1rem; }
+  .selects { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin-bottom: 1.1rem; }
+  .finder label { display: block; font-weight: 700; text-transform: uppercase; font-size: .8rem; letter-spacing: 1px; color: var(--muted); margin-bottom: .3rem; }
+  .finder select {
+    width: 100%; padding: .65rem .6rem; border: 2px solid var(--line); border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 600; color: var(--text); background: #fff;
+  }
+  .finder select:focus { outline: none; border-color: var(--red); }
+  .finder .hint { font-size: .78rem; color: var(--muted); margin-top: .8rem; }
+  .brand-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.1rem; }
+  .bchip {
+    border: 2px solid var(--line); background: #fff; border-radius: 999px; padding: .4rem 1rem;
+    font-weight: 600; font-size: .85rem; cursor: pointer; font-family: 'Inter', sans-serif;
+  }
+  .bchip.active { border-color: var(--red); color: var(--red); }
+  .finder .btn { width: 100%; }
+
+  /* ---------- BRAND ROW ---------- */
+  .brands { background: var(--bg); border-bottom: 1px solid var(--line); padding: 1.4rem 0; }
+  .brand-row { display: flex; gap: 2.6rem; justify-content: center; flex-wrap: wrap; align-items: center; }
+  .brand-row span {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase;
+    font-size: 1.25rem; letter-spacing: 1px; color: #9AA1AB;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 4.2rem 0; }
+  .sec-head { text-align: center; margin-bottom: 2.4rem; }
+  .sec-head h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); font-weight: 800; }
+  .sec-head h2 u { text-decoration: none; border-bottom: 4px solid var(--red); }
+  .sec-head p { color: var(--muted); max-width: 60ch; margin: .6rem auto 0; }
+
+  /* category cards */
+  .cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+  .cat {
+    background: var(--dark); color: #fff; border-radius: 10px; padding: 1.6rem 1.3rem; cursor: pointer;
+    border: 0; text-align: left; font-family: inherit; transition: transform .15s ease; position: relative; overflow: hidden;
+  }
+  .cat:hover { transform: translateY(-4px); }
+  .cat::after { content: ''; position: absolute; inset: auto -30px -30px auto; width: 110px; height: 110px; border-radius: 50%; border: 14px dashed #2A2E36; }
+  .cat .ico { font-size: 1.7rem; }
+  .cat h3 { font-size: 1.35rem; text-transform: uppercase; margin: .5rem 0 .2rem; }
+  .cat p { color: #A7ADB8; font-size: .85rem; position: relative; z-index: 1; }
+  .cat b { color: var(--red); font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; font-size: .95rem; letter-spacing: 1px; }
+
+  /* ---------- RESULTS / CATALOG ---------- */
+  #shop { background: var(--bg); }
+  .results-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.6rem; flex-wrap: wrap; }
+  .results-bar h2 { font-size: 1.7rem; font-weight: 800; }
+  .results-bar .count { color: var(--muted); font-size: .92rem; }
+  .reset { background: none; border: 0; color: var(--red); font-weight: 700; cursor: pointer; font-size: .9rem; text-decoration: underline; display: none; }
+  .tire-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.3rem; }
+  .tire {
+    background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 1.4rem;
+    display: flex; flex-direction: column; gap: .45rem; transition: box-shadow .15s ease;
+  }
+  .tire:hover { box-shadow: 0 12px 30px rgba(0,0,0,.1); }
+  .tire .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .tire .art { width: 84px; height: 84px; }
+  .badge {
+    font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    background: var(--red); color: #fff; border-radius: 4px; padding: .2rem .55rem; height: fit-content;
+  }
+  .badge.gray { background: var(--steel); }
+  .tire .b { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-top: .4rem; }
+  .tire h3 { font-size: 1.3rem; text-transform: uppercase; line-height: 1.1; }
+  .stars { color: #F5A623; font-size: .85rem; letter-spacing: 1px; }
+  .stars small { color: var(--muted); font-family: 'Inter', sans-serif; letter-spacing: 0; }
+  .tire .sizes { font-size: .78rem; color: var(--muted); }
+  .tire .price { margin-top: .4rem; display: flex; align-items: baseline; gap: .4rem; }
+  .tire .price b { font-family: 'Barlow Condensed', sans-serif; font-size: 1.9rem; color: var(--text); }
+  .tire .price span { color: var(--muted); font-size: .78rem; }
+  .tire .btn { margin-top: .8rem; text-align: center; font-size: .95rem; padding: .6rem 1rem; }
+  .no-match {
+    display: none; background: #fff; border: 2px dashed var(--line); border-radius: 10px;
+    padding: 2rem; text-align: center; color: var(--muted); margin-bottom: 1.3rem;
+  }
+  .no-match b { color: var(--text); }
+
+  /* ---------- WHY / PERKS ---------- */
+  .perks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+  .perk { text-align: center; padding: 1.6rem 1.2rem; border: 1px solid var(--line); border-radius: 10px; }
+  .perk .ico {
+    width: 54px; height: 54px; margin: 0 auto .8rem; border-radius: 50%;
+    background: rgba(225, 29, 46, .1); color: var(--red); display: grid; place-items: center; font-size: 1.5rem;
+  }
+  .perk h3 { font-size: 1.2rem; text-transform: uppercase; }
+  .perk p { font-size: .87rem; color: var(--muted); margin-top: .3rem; }
+
+  /* ---------- SERVICES ---------- */
+  #services { background: var(--dark); color: #fff; }
+  #services .sec-head p { color: #A7ADB8; }
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .svc {
+    background: var(--steel); border: 1px solid #2E323A; border-radius: 10px; padding: 1.5rem;
+    display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start;
+  }
+  .svc h3 { font-size: 1.2rem; text-transform: uppercase; }
+  .svc p { color: #A7ADB8; font-size: .85rem; margin-top: .25rem; }
+  .svc .p { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--red); white-space: nowrap; }
+
+  /* ---------- PROMO ---------- */
+  .promo {
+    background: linear-gradient(100deg, var(--red), var(--red-dark)); color: #fff;
+    border-radius: 14px; padding: 2.2rem 2.5rem; display: flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem; flex-wrap: wrap;
+  }
+  .promo h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; }
+  .promo p { opacity: .92; font-size: .95rem; }
+  .promo .btn { background: #fff; color: var(--red); }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .rev { background: var(--bg); border-radius: 10px; padding: 1.5rem; }
+  .rev p { font-size: .92rem; color: var(--text); margin: .5rem 0 .8rem; }
+  .rev b { font-size: .85rem; }
+  .rev small { color: var(--muted); display: block; font-size: .78rem; }
+
+  /* ---------- APPOINTMENT / CONTACT ---------- */
+  #visit { background: var(--bg); }
+  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+  .visit-info h2 { font-size: 2.1rem; font-weight: 800; }
+  .visit-info p { color: var(--muted); margin: .6rem 0 1.4rem; }
+  .info-rows { display: grid; gap: .9rem; font-size: .95rem; }
+  .info-rows div { display: flex; gap: .8rem; align-items: flex-start; }
+  .info-rows .i { color: var(--red); font-size: 1.1rem; }
+  .map-ph {
+    background: var(--dark); border-radius: 12px; aspect-ratio: 4 / 3; display: grid; place-items: center;
+    color: #A7ADB8; text-align: center; padding: 1.5rem; font-size: .9rem;
+  }
+  .map-ph b { color: #fff; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; font-size: 1.3rem; display: block; margin-bottom: .3rem; }
+
+  footer { background: var(--dark); color: #A7ADB8; padding: 2.2rem 0; font-size: .85rem; }
+  .foot { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  footer a { color: #fff; text-decoration: none; }
+
+  @media (max-width: 940px) {
+    .hero-grid, .visit-grid { grid-template-columns: 1fr; }
+    .cats, .perks { grid-template-columns: repeat(2, 1fr); }
+    .svc-grid, .reviews { grid-template-columns: 1fr; }
+    .nav-links li:not(:last-child) { display: none; }
+    .hero::before { display: none; }
+  }
+  @media (max-width: 560px) {
+    .cats, .perks, .selects { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body id="top">
+
+<div class="util">
+  <div class="wrap util-inner">
+    <span>📍 5900 Sample Rd, Houston, TX <span class="dot">•</span> Mon–Fri 8–6, Sat 8–5</span>
+    <span>Call us: <a href="tel:+17135550148">(713) 555-0148</a></span>
+  </div>
+</div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#17191D"/><circle cx="50" cy="50" r="40" fill="none" stroke="#E11D2E" stroke-width="7" stroke-dasharray="9 7"/><circle cx="50" cy="50" r="16" fill="#E11D2E"/></svg>
+      <span><b>Tread<span>Zone</span></b><small>Tire &amp; Wheel</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#shop">Shop Tires</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#visit">Location</a></li>
+      <li><a class="btn red" href="#visit" style="font-size:.9rem; padding:.55rem 1.2rem;">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO + FINDER ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Houston's Tire Pros</span>
+      <h1>The Right Tires.<br>The Right Price.<br><em>Installed Today.</em></h1>
+      <p>Search by size, vehicle, or brand — then roll in and we'll have you back on the road in under an hour.</p>
+      <div class="hero-perks">
+        <span>Free rotations for life</span>
+        <span>Price-match guarantee</span>
+        <span>Same-day installs</span>
+      </div>
+    </div>
+
+    <div class="finder" id="finder">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="size">By Size</button>
+        <button class="tab" data-tab="vehicle">By Vehicle</button>
+        <button class="tab" data-tab="brand">By Brand</button>
+      </div>
+
+      <div class="panel active" data-panel="size">
+        <h3>Find tires by size</h3>
+        <div class="selects">
+          <div><label>Width</label>
+            <select id="f-width"><option value="">Any</option><option>205</option><option>215</option><option>225</option><option>235</option><option>245</option><option>255</option><option>265</option><option>275</option></select>
+          </div>
+          <div><label>Ratio</label>
+            <select id="f-ratio"><option value="">Any</option><option>40</option><option>45</option><option>50</option><option>55</option><option>60</option><option>65</option><option>70</option></select>
+          </div>
+          <div><label>Diameter</label>
+            <select id="f-diam"><option value="">Any</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option></select>
+          </div>
+        </div>
+        <button class="btn red" onclick="searchBySize()">Find My Tires</button>
+        <p class="hint">💡 Your size is on the tire sidewall — it looks like <b>225/65R17</b>.</p>
+      </div>
+
+      <div class="panel" data-panel="vehicle">
+        <h3>Find tires by vehicle</h3>
+        <div class="selects" style="grid-template-columns: 1fr;">
+          <div><label>Vehicle</label>
+            <select id="f-vehicle">
+              <option value="">Select your vehicle…</option>
+              <option value="215/55R17">Toyota Camry (2018–2024)</option>
+              <option value="225/65R17">Honda CR-V (2017–2024)</option>
+              <option value="235/45R18">Honda Accord (2018–2024)</option>
+              <option value="275/60R20">Ford F-150 (2015–2024)</option>
+              <option value="265/70R17">Chevy Silverado 1500 (2014–2024)</option>
+              <option value="265/70R17">Toyota Tacoma (2016–2023)</option>
+              <option value="245/40R19">Tesla Model 3 (2017–2024)</option>
+              <option value="225/55R18">Nissan Rogue (2021–2024)</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn red" onclick="searchByVehicle()">Find My Tires</button>
+        <p class="hint">Don't see your ride? Call us — <b>(713) 555-0148</b> — we fit everything.</p>
+      </div>
+
+      <div class="panel" data-panel="brand">
+        <h3>Shop by brand</h3>
+        <div class="brand-chips" id="brandChips"></div>
+        <button class="btn red" onclick="searchByBrand()">Show Tires</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="brands">
+  <div class="wrap brand-row">
+    <span>Michelin</span><span>Bridgestone</span><span>Goodyear</span><span>Continental</span><span>Pirelli</span><span>BFGoodrich</span><span>Falken</span><span>Yokohama</span>
+  </div>
+</div>
+
+<!-- ============ CATEGORIES ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Shop by <u>Driving Style</u></h2>
+      <p>Not sure where to start? Pick the way you drive and we'll narrow it down.</p>
+    </div>
+    <div class="cats">
+      <button class="cat" onclick="filterType('All-Season')">
+        <span class="ico">🌦️</span><h3>All-Season</h3>
+        <p>Smooth, quiet, long-lasting — the daily-driver default.</p><b>Shop All-Season →</b>
+      </button>
+      <button class="cat" onclick="filterType('All-Terrain')">
+        <span class="ico">⛰️</span><h3>All-Terrain</h3>
+        <p>Trucks &amp; SUVs that work weekdays and play weekends.</p><b>Shop All-Terrain →</b>
+      </button>
+      <button class="cat" onclick="filterType('Performance')">
+        <span class="ico">🏁</span><h3>Performance</h3>
+        <p>Max grip and razor-sharp handling for sport driving.</p><b>Shop Performance →</b>
+      </button>
+      <button class="cat" onclick="filterType('Winter')">
+        <span class="ico">❄️</span><h3>Winter</h3>
+        <p>Confident stopping power when temps drop.</p><b>Shop Winter →</b>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATALOG / RESULTS ============ -->
+<section id="shop">
+  <div class="wrap">
+    <div class="results-bar">
+      <div>
+        <h2 id="resultsTitle">All Tires</h2>
+        <span class="count" id="resultsCount"></span>
+      </div>
+      <button class="reset" id="resetBtn" onclick="resetFilters()">✕ Clear filters &amp; show all</button>
+    </div>
+    <div class="no-match" id="noMatch">
+      <b>No exact match in our online catalog</b> — but our warehouse carries 10× what's listed here.<br>
+      Call <b>(713) 555-0148</b> and we'll have your size ready today.
+    </div>
+    <div class="tire-grid" id="tireGrid"></div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Why Drivers Choose <u>TreadZone</u></h2>
+    </div>
+    <div class="perks">
+      <div class="perk"><div class="ico">🔁</div><h3>Free Rotations for Life</h3><p>Every tire we sell includes free rotation &amp; balance for as long as you own it.</p></div>
+      <div class="perk"><div class="ico">🏷️</div><h3>Price-Match Guarantee</h3><p>Find it cheaper anywhere — online or local — and we'll match it on the spot.</p></div>
+      <div class="perk"><div class="ico">🛡️</div><h3>Road Hazard Coverage</h3><p>Nail in your tire? Covered repairs and prorated replacement on every set.</p></div>
+      <div class="perk"><div class="ico">⏱️</div><h3>Under an Hour</h3><p>Most 4-tire installs are done in 45 minutes or less. Coffee's on us while you wait.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 style="color:#fff;">Full-Service <u>Tire Shop</u></h2>
+      <p>Straightforward services, straightforward prices. No upsells, ever.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div><h3>Tire Installation</h3><p>Mount, balance, new valve stems &amp; disposal included.</p></div><span class="p">$25/tire</span></div>
+      <div class="svc"><div><h3>Flat Repair</h3><p>Full inspection and industry-standard patch-plug repair.</p></div><span class="p">FREE</span></div>
+      <div class="svc"><div><h3>Rotation &amp; Balance</h3><p>Extend tire life — recommended every 5,000–8,000 miles.</p></div><span class="p">$40</span></div>
+      <div class="svc"><div><h3>Wheel Alignment</h3><p>Computerized 4-wheel alignment with printed before/after specs.</p></div><span class="p">$89</span></div>
+      <div class="svc"><div><h3>TPMS Service</h3><p>Sensor diagnostics, replacement &amp; system relearn.</p></div><span class="p">from $35</span></div>
+      <div class="svc"><div><h3>Custom Wheels</h3><p>Huge catalog of wheels — bring your style, we'll fit it right.</p></div><span class="p">Ask us</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMO ============ -->
+<section>
+  <div class="wrap">
+    <div class="promo">
+      <div>
+        <h2>🎉 Grand Opening Special — $100 Off Any Set of 4</h2>
+        <p>Plus free alignment check with every install. Limited time.</p>
+      </div>
+      <a class="btn" href="#visit">Claim This Deal</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>Straight From Our <u>Customers</u></h2></div>
+    <div class="reviews">
+      <div class="rev"><span class="stars">★★★★★</span><p>"In and out in 40 minutes with four new tires. They matched an online price without me even pushing."</p><b>Marcus D.</b><small>F-150 · All-Terrain set</small></div>
+      <div class="rev"><span class="stars">★★★★★</span><p>"They fixed my flat for free and didn't try to sell me a thing. Guess who's buying her next set here."</p><b>Alicia R.</b><small>CR-V · Flat repair</small></div>
+      <div class="rev"><span class="stars">★★★★★</span><p>"Finally a tire shop that explains options instead of pushing the most expensive one. The finder on their site nailed my size."</p><b>James T.</b><small>Camry · All-Season set</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section id="visit">
+  <div class="wrap visit-grid">
+    <div class="visit-info">
+      <h2>Roll In or Book Ahead</h2>
+      <p>Walk-ins always welcome. Booking ahead gets you a guaranteed bay time and your tires staged before you arrive.</p>
+      <div class="info-rows">
+        <div><span class="i">📍</span><span><b>5900 Sample Rd, Houston, TX 77066</b><br>Corner of Sample & Placeholder Pkwy</span></div>
+        <div><span class="i">📞</span><span><a href="tel:+17135550148" style="color:var(--text); font-weight:700; text-decoration:none;">(713) 555-0148</a></span></div>
+        <div><span class="i">🕗</span><span>Mon–Fri 8 AM–6 PM · Sat 8 AM–5 PM · Sun Closed</span></div>
+        <div><span class="i">✉️</span><span>service@treadzonetire.com</span></div>
+      </div>
+      <div style="margin-top:1.6rem; display:flex; gap:.8rem; flex-wrap:wrap;">
+        <a class="btn red" href="tel:+17135550148">📞 Call to Book</a>
+        <a class="btn outline" href="mailto:service@treadzonetire.com?subject=Appointment%20Request">Email Us</a>
+      </div>
+    </div>
+    <div class="map-ph">
+      <div><b>Map goes here</b>Drop in a Google Maps embed once the real address is set.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 TreadZone Tire &amp; Wheel · Houston, TX</span>
+    <span><a href="#shop">Shop Tires</a> · <a href="#services">Services</a> · <a href="#visit">Book Appointment</a></span>
+  </div>
+</footer>
+
+<script>
+  /* ---------------- TIRE CATALOG (sample data) ---------------- */
+  const TIRES = [
+    { brand: 'Michelin',     name: 'Defender 2',            type: 'All-Season',  price: 189, rating: 4.8, reviews: 2214, badge: 'Best Seller', sizes: ['215/55R17','225/65R17','235/45R18','225/55R18'] },
+    { brand: 'Michelin',     name: 'Pilot Sport 4S',        type: 'Performance', price: 289, rating: 4.9, reviews: 3120, badge: 'Top Rated',   sizes: ['245/40R19','255/40R19','235/45R18'] },
+    { brand: 'Bridgestone',  name: 'Blizzak WS90',          type: 'Winter',      price: 164, rating: 4.7, reviews: 1408, badge: '',            sizes: ['215/55R17','225/65R17','235/45R18'] },
+    { brand: 'Goodyear',     name: 'Wrangler DuraTrac RT',  type: 'All-Terrain', price: 242, rating: 4.6, reviews:  980, badge: '',            sizes: ['265/70R17','275/60R20'] },
+    { brand: 'BFGoodrich',   name: 'All-Terrain T/A KO3',   type: 'All-Terrain', price: 259, rating: 4.8, reviews: 2650, badge: 'Best Seller', sizes: ['265/70R17','275/60R20'] },
+    { brand: 'Continental',  name: 'TrueContact Tour 54',   type: 'All-Season',  price: 146, rating: 4.6, reviews: 1102, badge: '',            sizes: ['205/55R16','215/55R17','225/55R18','225/65R17'] },
+    { brand: 'Pirelli',      name: 'P Zero PZ4',            type: 'Performance', price: 312, rating: 4.7, reviews:  874, badge: '',            sizes: ['245/40R19','255/40R19'] },
+    { brand: 'Falken',       name: 'Wildpeak A/T4W',        type: 'All-Terrain', price: 198, rating: 4.7, reviews: 1930, badge: 'Great Value', sizes: ['265/70R17','275/60R20','245/70R17'] },
+    { brand: 'Cooper',       name: 'Endeavor Plus',         type: 'All-Season',  price: 139, rating: 4.5, reviews:  760, badge: 'Great Value', sizes: ['225/65R17','225/55R18','235/60R18'] },
+    { brand: 'Toyo',         name: 'Open Country A/T III',  type: 'All-Terrain', price: 226, rating: 4.6, reviews: 1345, badge: '',            sizes: ['265/70R17','275/60R20'] },
+    { brand: 'Yokohama',     name: 'Avid Ascend LX',        type: 'All-Season',  price: 128, rating: 4.5, reviews:  692, badge: '',            sizes: ['205/55R16','215/55R17','225/65R17'] },
+    { brand: 'Nitto',        name: 'NT555 G2',              type: 'Performance', price: 187, rating: 4.5, reviews:  588, badge: '',            sizes: ['245/40R19','235/45R18'] },
+  ];
+
+  const tireSVG = `
+    <svg class="art" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="47" fill="#17191D"/>
+      <circle cx="50" cy="50" r="39" fill="none" stroke="#0C0D10" stroke-width="12" stroke-dasharray="8 6"/>
+      <circle cx="50" cy="50" r="26" fill="#3A3F47"/>
+      <circle cx="50" cy="50" r="24" fill="#4A505A"/>
+      <circle cx="50" cy="50" r="7" fill="#23262C"/>
+      <g fill="#23262C">
+        <circle cx="50" cy="33" r="3.4"/><circle cx="66" cy="45" r="3.4"/><circle cx="60" cy="64" r="3.4"/><circle cx="40" cy="64" r="3.4"/><circle cx="34" cy="45" r="3.4"/>
+      </g>
+    </svg>`;
+
+  const grid = document.getElementById('tireGrid');
+  const title = document.getElementById('resultsTitle');
+  const count = document.getElementById('resultsCount');
+  const resetBtn = document.getElementById('resetBtn');
+  const noMatch = document.getElementById('noMatch');
+
+  function stars(r) { return '★'.repeat(Math.round(r)) + ` <small>${r} (${'' + r})</small>`; }
+
+  function render(list, label) {
+    grid.innerHTML = list.map(t => `
+      <article class="tire">
+        <div class="top">${tireSVG}${t.badge ? `<span class="badge">${t.badge}</span>` : `<span class="badge gray">${t.type}</span>`}</div>
+        <span class="b">${t.brand}</span>
+        <h3>${t.name}</h3>
+        <span class="stars">${'★'.repeat(Math.round(t.rating))} <small>${t.rating} · ${t.reviews.toLocaleString()} reviews</small></span>
+        <span class="sizes">Sizes: ${t.sizes.join(' · ')}</span>
+        <div class="price"><b>$${t.price}</b><span>/tire + $25 install</span></div>
+        <a class="btn red" href="#visit">Book Install</a>
+      </article>`).join('');
+    title.textContent = label;
+    count.textContent = `${list.length} tire${list.length === 1 ? '' : 's'} shown · installation, balancing & disposal included`;
+    const filtered = label !== 'All Tires';
+    resetBtn.style.display = filtered ? 'inline' : 'none';
+    noMatch.style.display = 'none';
+    if (filtered) document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function resetFilters() { render(TIRES, 'All Tires'); }
+
+  function filterType(type) {
+    render(TIRES.filter(t => t.type === type), `${type} Tires`);
+  }
+
+  function searchBySize() {
+    const w = document.getElementById('f-width').value;
+    const r = document.getElementById('f-ratio').value;
+    const d = document.getElementById('f-diam').value;
+    if (!w && !r && !d) { resetFilters(); document.getElementById('shop').scrollIntoView({ behavior: 'smooth' }); return; }
+    const match = s => (!w || s.startsWith(w + '/')) && (!r || s.includes('/' + r + 'R')) && (!d || s.endsWith('R' + d));
+    const list = TIRES.filter(t => t.sizes.some(match));
+    const label = `Tires for ${w || '···'}/${r || '··'}R${d || '··'}`;
+    if (!list.length) {
+      render(TIRES, 'All Tires');
+      title.textContent = label;
+      resetBtn.style.display = 'inline';
+      noMatch.style.display = 'block';
+      document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    render(list, label);
+  }
+
+  function searchByVehicle() {
+    const sel = document.getElementById('f-vehicle');
+    if (!sel.value) return;
+    const size = sel.value;
+    const list = TIRES.filter(t => t.sizes.includes(size));
+    render(list, `${sel.options[sel.selectedIndex].text.split(' (')[0]} — ${size}`);
+  }
+
+  /* brand chips */
+  const brands = [...new Set(TIRES.map(t => t.brand))];
+  const chipsBox = document.getElementById('brandChips');
+  chipsBox.innerHTML = brands.map(b => `<button class="bchip" data-b="${b}">${b}</button>`).join('');
+  chipsBox.addEventListener('click', e => {
+    if (!e.target.classList.contains('bchip')) return;
+    chipsBox.querySelectorAll('.bchip').forEach(c => c.classList.remove('active'));
+    e.target.classList.add('active');
+  });
+  function searchByBrand() {
+    const active = chipsBox.querySelector('.bchip.active');
+    if (!active) return;
+    render(TIRES.filter(t => t.brand === active.dataset.b), `${active.dataset.b} Tires`);
+  }
+
+  /* finder tabs */
+  document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector(`.panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
+  }));
+
+  resetFilters();
+</script>
+
+</body>
+</html>
