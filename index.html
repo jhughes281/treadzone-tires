@@ -196,6 +196,52 @@
   .svc p { color: #A7ADB8; font-size: .85rem; margin-top: .25rem; }
   .svc .p { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--red); white-space: nowrap; }
 
+  /* ---------- PROTECTION PACKAGES ---------- */
+  .pkgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; align-items: stretch; }
+  .pkg {
+    background: #fff; border: 2px solid var(--line); border-radius: 12px; padding: 1.8rem 1.5rem;
+    display: flex; flex-direction: column; position: relative;
+  }
+  .pkg.hot { border-color: var(--red); box-shadow: 0 18px 40px rgba(225, 29, 46, .14); }
+  .pkg .flag {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--red); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px; font-size: .8rem; padding: .25rem 1rem; border-radius: 999px; white-space: nowrap;
+  }
+  .pkg h3 { font-size: 1.5rem; text-transform: uppercase; }
+  .pkg .tagline { color: var(--muted); font-size: .85rem; margin-bottom: 1rem; }
+  .pkg .pp { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 2rem; margin-bottom: 1rem; }
+  .pkg .pp small { font-family: 'Inter', sans-serif; font-weight: 500; font-size: .8rem; color: var(--muted); }
+  .pkg ul { list-style: none; display: grid; gap: .55rem; font-size: .9rem; margin-bottom: 1.4rem; flex: 1; }
+  .pkg li::before { content: '✓ '; color: var(--red); font-weight: 700; }
+  .pkg li.no { color: #B6BCC5; }
+  .pkg li.no::before { content: '✕ '; color: #B6BCC5; }
+  .pkg .btn { text-align: center; }
+  .plan-note { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 1.4rem; }
+  .plan-note b { color: var(--text); }
+
+  /* ---------- CLUB & FLEET ---------- */
+  #club { background: var(--bg); }
+  .club-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.2rem; }
+  .club-card, .fleet-card { border-radius: 12px; padding: 2rem; }
+  .club-card { background: var(--dark); color: #fff; position: relative; overflow: hidden; }
+  .club-card::after { content: ''; position: absolute; right: -40px; bottom: -40px; width: 160px; height: 160px; border-radius: 50%; border: 18px dashed #2A2E36; }
+  .club-card .kicker, .fleet-card .kicker { color: var(--red); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: .85rem; }
+  .club-card h3, .fleet-card h3 { font-size: 1.7rem; text-transform: uppercase; margin: .3rem 0 .8rem; }
+  .club-steps { display: grid; gap: .7rem; margin: 1rem 0 1.2rem; position: relative; z-index: 1; }
+  .club-steps div { display: flex; gap: .8rem; align-items: center; font-size: .92rem; color: #C9CDD4; }
+  .club-steps b {
+    min-width: 34px; height: 34px; border-radius: 50%; background: var(--red); color: #fff;
+    display: grid; place-items: center; font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem;
+  }
+  .club-card .bonus { background: rgba(225, 29, 46, .15); border: 1px solid rgba(225, 29, 46, .4); border-radius: 8px; padding: .8rem 1rem; font-size: .88rem; position: relative; z-index: 1; }
+  .fleet-card { background: #fff; border: 2px solid var(--line); display: flex; flex-direction: column; }
+  .fleet-card p { color: var(--muted); font-size: .92rem; }
+  .fleet-card ul { list-style: none; display: grid; gap: .5rem; font-size: .9rem; margin: 1rem 0 1.4rem; flex: 1; }
+  .fleet-card li::before { content: '✓ '; color: var(--red); font-weight: 700; }
+  .fleet-card .pp { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.7rem; }
+  .fleet-card .pp small { font-family: 'Inter', sans-serif; font-weight: 500; font-size: .8rem; color: var(--muted); }
+
   /* ---------- PROMO ---------- */
   .promo {
     background: linear-gradient(100deg, var(--red), var(--red-dark)); color: #fff;
@@ -234,7 +280,8 @@
   @media (max-width: 940px) {
     .hero-grid, .visit-grid { grid-template-columns: 1fr; }
     .cats, .perks { grid-template-columns: repeat(2, 1fr); }
-    .svc-grid, .reviews { grid-template-columns: 1fr; }
+    .svc-grid, .reviews, .pkgs, .club-grid { grid-template-columns: 1fr; }
+    .pkg.hot { order: -1; }
     .nav-links li:not(:last-child) { display: none; }
     .hero::before { display: none; }
   }
@@ -261,7 +308,8 @@
     <ul class="nav-links">
       <li><a href="#shop">Shop Tires</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#why">Why Us</a></li>
+      <li><a href="#protection">Protection Plan</a></li>
+      <li><a href="#club">Rewards</a></li>
       <li><a href="#visit">Location</a></li>
       <li><a class="btn red" href="#visit" style="font-size:.9rem; padding:.55rem 1.2rem;">Book Appointment</a></li>
     </ul>
@@ -417,6 +465,93 @@
       <div class="svc"><div><h3>Wheel Alignment</h3><p>Computerized 4-wheel alignment with printed before/after specs.</p></div><span class="p">$89</span></div>
       <div class="svc"><div><h3>TPMS Service</h3><p>Sensor diagnostics, replacement &amp; system relearn.</p></div><span class="p">from $35</span></div>
       <div class="svc"><div><h3>Custom Wheels</h3><p>Huge catalog of wheels — bring your style, we'll fit it right.</p></div><span class="p">Ask us</span></div>
+      <div class="svc"><div><h3>Nitrogen Fill</h3><p>Steadier pressure, better fuel economy, longer tire life.</p></div><span class="p">$8/tire</span></div>
+      <div class="svc"><div><h3>Seasonal Tire Storage</h3><p>We'll store your off-season set — climate-safe and swap-ready.</p></div><span class="p">$60/season</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROTECTION & PACKAGES ============ -->
+<section id="protection">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Protect Your <u>Investment</u></h2>
+      <p>New tires are a big purchase — our protection plan makes sure one pothole doesn't ruin it. Most drivers choose Protected.</p>
+    </div>
+    <div class="pkgs">
+      <div class="pkg">
+        <h3>Basic</h3>
+        <p class="tagline">Just the tires, done right.</p>
+        <p class="pp">Tires + install <small>$25/tire</small></p>
+        <ul>
+          <li>Mount, balance &amp; new valve stems</li>
+          <li>Old tire disposal</li>
+          <li>Free flat repair (any tire, anytime)</li>
+          <li class="no">Road hazard coverage</li>
+          <li class="no">Lifetime rotations on us</li>
+        </ul>
+        <a class="btn outline" href="#visit">Choose Basic</a>
+      </div>
+      <div class="pkg hot">
+        <span class="flag">Most Popular</span>
+        <h3>Protected</h3>
+        <p class="tagline">Peace of mind, mile after mile.</p>
+        <p class="pp">+ $20/tire <small>one-time, at purchase</small></p>
+        <ul>
+          <li>Everything in Basic</li>
+          <li><b>3-year road hazard coverage</b> — nail, pothole, or blowout, we repair or replace it</li>
+          <li>Free rotations for life of the tires</li>
+          <li>Free mounting &amp; balancing on covered replacements</li>
+        </ul>
+        <a class="btn red" href="#visit">Choose Protected</a>
+      </div>
+      <div class="pkg">
+        <h3>VIP</h3>
+        <p class="tagline">The full white-glove setup.</p>
+        <p class="pp">+ $30/tire <small>one-time, at purchase</small></p>
+        <ul>
+          <li>Everything in Protected</li>
+          <li>Alignment check with every rotation</li>
+          <li>Nitrogen fill included ($32 value)</li>
+          <li>Priority bay — skip the line, guaranteed slot</li>
+        </ul>
+        <a class="btn outline" href="#visit">Choose VIP</a>
+      </div>
+    </div>
+    <p class="plan-note">💡 <b>Why drivers add protection:</b> one un-repairable pothole hit can cost $150–$300 out of pocket. The plan covers it — parts, labor, and all.</p>
+  </div>
+</section>
+
+<!-- ============ CLUB & FLEET ============ -->
+<section id="club">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Get Rewarded for <u>Rolling With Us</u></h2>
+    </div>
+    <div class="club-grid">
+      <div class="club-card">
+        <span class="kicker">Free to join</span>
+        <h3>TreadZone Club</h3>
+        <div class="club-steps">
+          <div><b>1</b><span>Join free at the counter — just your phone number.</span></div>
+          <div><b>2</b><span>Earn <b style="all:unset; color:#fff; font-weight:700;">1 point for every $1</b> you spend on tires or service.</span></div>
+          <div><b>3</b><span>100 points = <b style="all:unset; color:#fff; font-weight:700;">$10 off</b> your next visit. Automatic — no coupons to remember.</span></div>
+        </div>
+        <div class="bonus">🤝 <b>Referral bonus:</b> send a friend who buys a set of 4 and score <b>500 points ($50 value)</b>. They get the same welcome deal you did.</div>
+      </div>
+      <div class="fleet-card">
+        <span class="kicker">Businesses &amp; multi-car families</span>
+        <h3>Fleet &amp; Family Plan</h3>
+        <p>Keep every vehicle you're responsible for rolling — for one flat monthly rate.</p>
+        <ul>
+          <li>Unlimited rotations &amp; flat repairs</li>
+          <li>Priority scheduling — your bays are waiting</li>
+          <li>Member pricing on every tire we sell</li>
+          <li>Quarterly tread &amp; pressure checkups, logged per vehicle</li>
+        </ul>
+        <p class="pp">$40/month <small>per vehicle · cancel anytime</small></p>
+        <a class="btn red" href="#visit" style="text-align:center; margin-top:1rem;">Ask About Fleet Plans</a>
+      </div>
     </div>
   </div>
 </section>
