@@ -1,0 +1,47 @@
+/* TreadZone brand alignment — Auto Group design language */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--red:#b58b60;--red-dark:#987049;--dark:#111820;--steel:#303943;--line:#dfe3e7;--text:#111820;--muted:#65717b;--bg:#f4f5f6}
+body{font-family:Inter,Arial,sans-serif;color:var(--text);line-height:1.65}
+h1,h2,h3,.btn,.tab,.finder label{font-family:Manrope,Arial,sans-serif;letter-spacing:-.035em}
+h1,h2,.cat h3,.tire h3,.panel h3,.finder label,.btn,.tab{text-transform:none}
+h1,h2{letter-spacing:-.045em}
+.wrap{width:min(1240px,calc(100% - 48px))}
+.util{background:#111820;color:#cdd2d7;padding:3px 0}
+.util .dot{color:var(--red)}
+nav{background:#fff;border-bottom:1px solid var(--line);box-shadow:none}
+.nav-inner{min-height:84px;padding:.7rem 0}
+.brand b{font-family:Manrope,sans-serif;font-size:1.3rem;letter-spacing:-.06em}
+.brand b span{color:var(--ink,#111820)}
+.brand small{font-size:.55rem;letter-spacing:.3em}
+.brand svg{width:36px;height:36px}
+.nav-links a{font-size:.87rem}
+.nav-links a:hover{color:#9d7249}
+.btn{border-radius:6px;letter-spacing:0;font-family:Inter,sans-serif;font-size:.9rem;font-weight:600;padding:.85rem 1.4rem;transition:background .18s,transform .18s}
+.btn.red{background:#111820;color:white}.btn.red:hover{background:#303943}
+.btn.outline{border:1px solid #111820}
+.hero{background:linear-gradient(90deg,rgba(8,15,22,.94),rgba(8,15,22,.7) 58%,rgba(8,15,22,.4)),url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85') center/cover;padding:6rem 0;min-height:640px;display:flex;align-items:center}
+.hero::before{display:none}.hero-grid{grid-template-columns:1.05fr .95fr;gap:4rem}
+.hero .kicker{color:#d0a779;font-size:.76rem;letter-spacing:.16em}
+.hero h1{font-size:clamp(2.7rem,5vw,5rem);line-height:1.12;font-weight:800;max-width:12ch}
+.hero h1 em{color:#e7c49c}
+.hero p{color:#e0e4e8;font-size:1.08rem}
+.hero-perks span::before{color:#d0a779}
+.finder{border-radius:9px;box-shadow:0 20px 55px #0005}
+.tab{font-size:.85rem;letter-spacing:0}.tab.active{color:#987049;border-bottom-color:#b58b60}
+.finder select{border:1px solid #bbc4cb;border-radius:5px}
+.finder select:focus{border-color:#b58b60}
+.bchip{border-radius:5px}.bchip.active{color:#987049;border-color:#b58b60}
+.brands{background:#f4f5f6}.brand-row span{font-family:Manrope,sans-serif;font-size:1rem;letter-spacing:-.03em}
+section{padding:5.5rem 0}.hero{padding:6rem 0}
+.sec-head h2{font-size:clamp(2rem,3.6vw,3.2rem);font-weight:800}.sec-head h2 u{border-color:#b58b60}
+.cats{gap:1.4rem}.cat{background:#fff;color:#111820;border:1px solid #dfe3e7;border-radius:9px;padding:2rem 1.4rem}
+.cat::after{display:none}.cat p{color:#65717b}.cat b{font-family:Inter,sans-serif;color:#987049;font-size:.85rem}
+.cat h3{font-size:1.2rem}
+#shop{background:#f4f5f6}.tire{border-radius:9px}.tire h3{font-size:1.17rem}
+.tire .price b{font-family:Manrope,sans-serif}
+.badge{background:#303943}.badge.gray{background:#65717b}
+.perk,.plan,.service-card{border-color:#dfe3e7}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #b58b60;outline-offset:3px}
+@media(max-width:900px){.hero-grid{gap:2rem}.hero{min-height:auto}}
+@media(max-width:650px){.wrap{width:calc(100% - 36px)}.hero{padding:4rem 0;background-position:58% center}.hero h1{font-size:clamp(2.5rem,11vw,3.5rem)}section{padding:4rem 0}.nav-inner{min-height:72px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
