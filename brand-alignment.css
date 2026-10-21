@@ -48,3 +48,5 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #b58
 
 .brand-logo{display:block;height:58px;width:auto}
 @media(max-width:640px){.brand-logo{height:42px}}
+.foot-brand{display:flex;flex-direction:column;gap:.6rem}
+.foot-logo{display:block;height:46px;width:auto}
